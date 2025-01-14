@@ -33,7 +33,7 @@ def get_weather():
     config_dict['connection']['use_proxy'] = True
     config_dict['proxies']['http'] = os.getenv('HTTP_PROXY')
     config_dict['proxies']['https'] = os.getenv('HTTPS_PROXY')
-    owm = OWM('fdf47cd18a688cba4edaaf04c7689472',config_dict)
+    owm = OWM(os.getenv('HTTPS_PROXY'),config_dict)
     # 获取天气管理器
     mgr = owm.weather_manager()
     # 获取环境变量中指定城市的天气信息
